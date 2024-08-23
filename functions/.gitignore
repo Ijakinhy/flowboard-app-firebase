@@ -1,0 +1,48 @@
+# Node modules directory
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Dependency directories
+jspm_packages/
+
+# Environment files
+.env
+.env.local
+
+# IDE/Editor specific folders
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Other temporary files
+*.tmp
+*.swp
+*.bak
+# Firebase Emulator logs and local state
+firebase-debug.log
+.firebase/
+
+# Firestore and Auth emulator data
+firestore_export/
+auth_export/
+
+# Firebase Functions dependencies and build artifacts
+functions/node_modules/
+functions/lib/
+functions/dist/
+
+# Firebase Hosting cache
+.firebase/hosting.caches
