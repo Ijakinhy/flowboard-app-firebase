@@ -4,12 +4,12 @@ import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
 import { connectFunctionsEmulator, getFunctions } from "firebase/functions";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAUXJvVx5OPs0KPtG8z7t7vF8ts9hF3Jls",
-  authDomain: "jakin-flowboardapp.firebaseapp.com",
-  projectId: "jakin-flowboardapp",
-  storageBucket: "jakin-flowboardapp.appspot.com",
-  messagingSenderId: "162479264844",
-  appId: "1:162479264844:web:ba6260d4ca6d9041f350e9",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
@@ -17,7 +17,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const fbFunctions = getFunctions(app);
 
-if (process.env.NODE_ENV === "development") {
+if (window.location.hostname === "localhost") {
   connectAuthEmulator(auth, "http://localhost:9099");
   connectFirestoreEmulator(db, "localhost", 8080);
   connectFunctionsEmulator(fbFunctions, "localhost", 5001);
